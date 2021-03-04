@@ -14,13 +14,12 @@ const findKeyByValue = (object, value) => {
   for (let key of listKeys) {
     if (object[key] === value) {
       matchedKey = key;
-      console.log("OUTPUT: ", matchedKey);
     }
   }
   return matchedKey;
 };
 
-// Debugging
+/* // Debugging
 const bestTVShowsByGenre = { 
   sci_fi: "The Expanse",
   comedy: "Brooklyn Nine-Nine",
@@ -28,4 +27,4 @@ const bestTVShowsByGenre = {
 };
 
 assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
-assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
+assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined); */
