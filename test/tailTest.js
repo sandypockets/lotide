@@ -1,18 +1,15 @@
 const assertEqual = require('../assertEqual');
 const tail = require('../tail');
+const assert = require('chai').assert;
 
-const result = tail(["Hello", "Lighthouse", "Labs"]);
-assertEqual(result, ["Lighthouse", "Labs"]); // => will always fail!
-
-// Debugging
-// Ensuring array is not modified.
-console.log(result); 
-const words = ["Yo Yo", "This is Lighthouse", "Labs"];
-tail(words);
-
-assertEqual(words.length, 3); // Original array still has 3 elements.
-
-// Check if empty array returns expected result.
-const moreDubugging = [];
-tail(moreDubugging);
-assertEqual(moreDubugging.length, 0);
+describe("#tail", () => {
+  it("returns [ 'This is Lighthouse', 'Labs' ] for ['Hello', 'This is Lighthouse', 'Labs']", () => {
+    assert.deepEqual(tail(['Hello', 'This is Lighthouse', 'Labs' ]), [ 'This is Lighthouse', 'Labs' ]);
+  });
+  it("returns [2, 3] for [1, 2, 3]", () => {
+    assert.deepEqual(tail([1, 2, 3]), [2, 3]);
+  });
+  it("returns [] when passed an empty array []", () => {
+    assert.deepEqual(tail([]), []);
+  });
+});
