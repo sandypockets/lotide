@@ -4,7 +4,6 @@ const reverse = function(word) {
     reversedWords += word[i];
   }
   return reversedWords;
-}
+};
 
-console.log(reverse('hello'));
-console.log(reverse('world'));
+module.exports = reverse;
